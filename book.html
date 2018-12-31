@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-theme.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="icon" href="./images/logoBrowserTab.png" />
+    <link href="./css/carousel.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/datePicker.css">
+
+    <title>Miam's - Réserver une table</title>
+</head>
+
+<body id="bookingBody">
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark navbarCl">
+            <img src="./images/logoWhite.png" class="logoNavBar" alt="">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Réservez votre table <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main role="main">
+        <h1 class="text-center bookingFont">Commandez votre table</h1>
+        <div class="text-center textBooking bookingFont">
+            <p>Ce formulaire permet de commander une table dans notre restaurant, ensuite vous pourrez commander vos
+                plats. Il faudra aussi indiquer vos coordonnées et dans le cas de plusieurs personnes, indiquez le nom
+                de chacune d'entre elles.</p>
+        </div>
+        <div class="form-horizontal bookingFont bookingForm" id="bookForm">
+            <div class="form-group">
+                <legend>Réservez une table</legend>
+            </div>
+
+            <div class="row rowsForm">
+                <div class="col-sm-3">
+                    <label for="nbP">Table pour combien de personnes ?</label>
+                </div>
+                <div class="col-sm-3">
+                    <select class="form-control" id="nbP">
+                        <option value="-1">--Veuillez choisir--</option>
+                        <option value="1">Une Place</option>
+                        <option value="2">Deux Places</option>
+                        <option value="4">4 Places</option>
+                        <option value="6">6 Places</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row rowError" id="errNbPersons">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-3"><span class="text-danger">Veuillez choisir le nombre de
+                        personnes !</span></div>
+            </div>
+
+
+            <div id="chaises">
+
+            </div>
+            <div class="row rowsForm">
+                <div class="col-sm-3">
+                    <label for="date">Date de réservation</label>
+                </div>
+                <div class="col-sm-3">
+                    <input class="form-control" data-provide="datepicker" name="date" id="date">
+                </div>
+            </div>
+            <div class="row rowError" id="errDate">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-3"><span class="text-danger">Veuillez indiquer la date de réservation !</span></div>
+            </div>
+
+            <div class="row rowsForm">
+                <div class="col-sm-3">
+                    <label for="civ">Civilité</label>
+                </div>
+                <div class="col-sm-3 col-lg-4 col-md-3">
+                    <div class="form">
+                        <label id="radMme">
+                            <input type="radio" name="civ" id="civMme" value="mme">
+                            Madame
+                        </label>
+                        <label id="radMlle">
+                            <input type="radio" name="civ" id="civMlle" value="mlle">
+                            Mademoiselle
+                        </label>
+                        <label>
+                            <input type="radio" name="civ" id="civM" value="m">
+                            Monsieur
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="row rowError" id="errCiv">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-3"><span class="text-danger">Veuillez indiquer votre civilité !</span></div>
+            </div>
+
+            <div class="row rowsForm">
+                <div class="col-sm-3">
+                    <label for="civ">Nom et prénom</label>
+                </div>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Nom">
+                </div>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" name="firstName" id="firstName" placeholder="Prénom">
+                </div>
+            </div>
+            <div class="row rowError" id="errLastName">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-3">
+                    <span class="text-danger">Veuillez indiquer votre nom !</span>
+                </div>
+            </div>
+            <div class="row rowError" id="errIncorrectLastName">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-3">
+                    <span class="text-danger">Le nom ne doit pas contenir des nombres !</span>
+                </div>
+            </div>
+            <div class="row rowError" id="errLengthLastName">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-3">
+                    <span class="text-danger">Le nom doit contenir 3 lettres au moins !</span>
+                </div>
+            </div>
+            <div class="row rowError" id="errFirstName">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-3"></div>
+                <div class="col-sm-3">
+                    <span class="text-danger">Veuillez indiquer votre prénom !</span>
+                </div>
+            </div>
+            <div class="row rowError" id="errIncorrectFirstName">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-3"></div>
+                <div class="col-sm-3">
+                    <span class="text-danger">Le prénom ne doit pas contenir des nombres !</span>
+                </div>
+            </div>
+            <div class="row rowError" id="errLengthFirstName">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-3"></div>
+                <div class="col-sm-3">
+                    <span class="text-danger">Le prénom doit contenir 3 lettres au moins !</span>
+                </div>
+            </div>
+
+            <div class="row rowsForm">
+                <div class="col-sm-3">
+                    <label for="civ">Téléphone</label>
+                </div>
+                <div class="col-sm-3">
+                    <input type="tel" pattern="^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,5})|(\(?\d{2,6}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$"
+                        class="form-control" name="tel" id="tel" placeholder="Téléphone">
+                </div>
+            </div>
+            <div class="row rowError" id="errTelEmpty">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-3" id="errTel">
+                    <span class="text-danger">Veuillez indiquer votre numéro de téléphone !</span>
+                </div>
+            </div>
+            <div class="row rowError" id="errTelLength">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-3" id="errTel">
+                    <span class="text-danger">Le numéro saisi est incorrect</span>
+                </div>
+            </div>
+
+            <div class="row rowsForm" id="accRow">
+                <div class="col-sm-3">
+                    <label for="civ">Accompagnateurs</label>
+                </div>
+                <div class="col-sm-1">
+                    <button id="btAddAcc" class="btPlusAcc"><i class="fa fa-plus addSigne"></i></button>
+                </div>
+            </div>
+            <div class="row rowError" id="errAcc">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-5">
+                    <span class="text-danger" id="errAccEmpty">Veuillez indiquer tous les noms des accompagnateurs !</span>
+                </div>
+            </div>
+            <div class="row rowError" id="errAccLength">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-5">
+                    <span class="text-danger">Vérifiez le nom de l'accompagnateur !</span>
+                </div>
+            </div>
+            <div class="row rowError" id="errAccName">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-5">
+                    <span class="text-danger">Le nom de l'accompagnateur ne doit pas contenir des nombres !</span>
+                </div>
+            </div>
+            
+
+
+            <input type="hidden" name="hiddenNumber" id="hiddenNumber" value="0">
+
+            <div id="divFood">
+                <h3 id="titleQuestion" class="text-center">Que voulez-vous manger ?</h3>
+
+                <div class="row rowFoodIcons text-center">
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 icon brightness" id="iconCouscous" data-quant="0" data-prix="15.5" value="0">
+                        <img class="foodIcons" src="./images/foodIcons/couscous.png" alt="Icone couscous">
+                        <p>Couscous</p>
+                        <div class="quantity" id="couscousQuant">
+                            <button id="btMinusCous" type="button" class="btn btn-danger btn-sm"><i class="fa fa-minus"></i></button>
+                            <span id="nbCous">0</span>
+                            <button id="btPlusCous" type="button" class="btn btn-info btn-sm"><i class="fa fa-plus"></i></button>
+                        </div>
+                    </div>
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 icon brightness" id="iconRice" data-quant="0" data-prix="12" value="0">
+                        <img class="foodIcons" src="./images/foodIcons/rice.png" alt="Icone riz">
+                        <p>Riz</p>
+                        <div class="quantity" id="rizQuant">
+                            <button id="btMinusRice" type="button" class="btn btn-danger btn-sm"><i class="fa fa-minus"></i></button>
+                            <span id="nbRice">0</span>
+                            <button id="btPlusRice" type="button" class="btn btn-info btn-sm"><i class="fa fa-plus"></i></button>
+                        </div>
+                    </div>
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 icon brightness" id="iconSoupe" data-quant="0" data-prix="2.5" value="0">
+                        <img class="foodIcons" src="./images/foodIcons/soupe.png" alt="Icone soupe">
+                        <p>Soupe</p>
+                        <div class="quantity" id="soupeQuant">
+                            <button id="btMinusSoupe" type="button" class="btn btn-danger btn-sm"><i class="fa fa-minus"></i></button>
+                            <span id="nbSoupe">0</span>
+                            <button id="btPlusSoupe" type="button" class="btn btn-info btn-sm"><i class="fa fa-plus"></i></button>
+                        </div>
+                    </div>
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 icon brightness" id="iconSalade" data-quant="0" data-prix="5" value="0">
+                        <img class="foodIcons" src="./images/foodIcons/salade.png" alt="Icone salade">
+                        <p>Salade</p>
+                        <div class="quantity" id="saladeQuant">
+                            <button id="btMinusSalade" type="button" class="btn btn-danger btn-sm"><i class="fa fa-minus"></i></button>
+                            <span id="nbSalade">0</span>
+                            <button id="btPlusSalade" type="button" class="btn btn-info btn-sm"><i class="fa fa-plus"></i></button>
+                        </div>
+                    </div>
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 icon brightness" id="iconPizza" data-quant="0" data-prix="12" value="0">
+                        <img class="foodIcons" src="./images/foodIcons/pizza.png" alt="Icone pizza">
+                        <p>Pizza</p>
+                        <div class="quantity" id="pizzaQuant">
+                            <button id="btMinusPizza" type="button" class="btn btn-danger btn-sm"><i class="fa fa-minus"></i></button>
+                            <span id="nbPizza">0</span>
+                            <button id="btPlusPizza" type="button" class="btn btn-info btn-sm"><i class="fa fa-plus"></i></button>
+                        </div>
+                    </div>
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 icon brightness" id="iconHamburger" data-quant="0" data-prix="8" value="0">
+                        <img class="foodIcons" src="./images/foodIcons/hamburger.ico" alt="Icone hamburger">
+                        <p>Hamburger</p>
+                        <div class="quantity" id="HamburgerQuant">
+                            <button id="btMinusHamb" type="button" class="btn btn-danger btn-sm"><i class="fa fa-minus"></i></button>
+                            <span id="nbHamb">0</span>
+                            <button id="btPlusHamb" type="button" class="btn btn-info btn-sm"><i class="fa fa-plus"></i></button>
+                        </div>
+                    </div>
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 icon brightness" id="iconGateau" data-quant="0" data-prix="6.4" value="0">
+                        <img class="foodIcons" src="./images/foodIcons/gateau.jpg" alt="Icone gateau">
+                        <p>Gâteau</p>
+                        <div class="quantity" id="cakeQuant">
+                            <button id="btMinusGat" type="button" class="btn btn-danger btn-sm"><i class="fa fa-minus"></i></button>
+                            <span id="nbGat">0</span>
+                            <button id="btPlusGat" type="button" class="btn btn-info btn-sm"><i class="fa fa-plus"></i></button>
+                        </div>
+                    </div>
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 icon brightness" id="iconFruit" data-quant="0" data-prix="7" value="0">
+                        <img class="foodIcons" src="./images/foodIcons/fruit.png" alt="Icone fruit">
+                        <p>Fruits</p>
+                        <div class="quantity" id="fruitQuant">
+                            <button id="btMinusFruit" type="button" class="btn btn-danger btn-sm"><i class="fa fa-minus"></i></button>
+                            <span id="nbFruit">0</span>
+                            <button id="btPlusFruit" type="button" class="btn btn-info btn-sm"><i class="fa fa-plus"></i></button>
+                        </div>
+                    </div>
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 icon brightness" id="iconCoca" data-quant="0" data-prix="2" value="0">
+                        <img class="foodIcons" src="./images/foodIcons/coca.png" alt="Icone fruit">
+                        <p>Canette</p>
+                        <div class="quantity" id="canetteQuant">
+                            <button id="btMinusCan" type="button" class="btn btn-danger btn-sm"><i class="fa fa-minus"></i></button>
+                            <span id="nbCan">0</span>
+                            <button id="btPlusCan" type="button" class="btn btn-info btn-sm"><i class="fa fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <input type="hidden" name="ancientId" id="ancientId" class="form-control" value="">
+                
+            </div>
+            <div class="rowError text-center" id="errMeals">
+                <span class="text-danger">Veuillez indiquer les repas à commander !</span>
+            </div>
+            <div class="rowError text-center" id="errMealsQuantity">
+                <span class="text-danger">Vous avez commandé un repas sans préciser la quantité !</span>
+            </div>
+
+
+
+            <div class="text-center">
+                <button type="button" id="btOrder" class="btn btn-info btn-lg">Réserver <i class="fa fa-cutlery"></i></button>
+            </div>
+
+            <div class="divResume">
+                
+                <div class="card text-white bg-dark mb-3">
+                    <div class="card-header text-center">Résumé</div>
+                    <div class="card-body">
+                        <h5 class="card-title"><u>Résumé de votre réservation</u></h5>
+                        <p class="card-text" id="cardParagraph"></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </main>
+
+    <script src="./js/jquery.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/util.js"></script>
+    <script src="./js/datePicker.js"></script>
+    <script src="./js/bootbox.min.js"></script>
+</body>
+
+</html>

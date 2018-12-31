@@ -1,0 +1,209 @@
+.imgLogo {
+    width: 150px;
+    height: 150px;
+}
+
+.logoNavBar {
+    width: 140px;
+    height: 140px;
+    margin-right: 10px;
+    margin-top: 0px;
+}
+
+.navbarCl {
+    background-color: transparent!important;
+    font-size: 20px;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.bigTitle {
+    background-color: black;
+    opacity: 0.5;
+}
+
+.title {
+    color: white;
+}
+
+.prevNextIcon {
+    width: 50px;
+    height: 50px;
+}
+
+.carCaption {
+    background-color: rgba(0, 0, 0, 0.644);
+    opacity: 1;
+}
+#myCarousel {
+    position: absolute;
+    top: 0;
+    width: 100%;
+} 
+
+.contMark {
+    margin-top: 400px;
+}
+
+.imgAvis {
+    width: 100%!important;
+    height: 100%!important;
+    margin-right: 10px;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+#copyright {
+    margin-top: 5px;
+}
+
+.textBooking {
+    margin: 50px;
+}
+
+#bookingBody {
+    background-image: url("../images/compressedBack.jpg");
+}
+
+.bookingFont {
+    color: white;
+}
+
+.bookingForm {
+    margin: 10px;
+}
+
+legend {
+    text-decoration: underline;
+    margin-bottom: 20px;
+}
+
+
+#chaises {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+#radMme, #radMlle {
+    margin-right: 10px; 
+}
+
+.rowsForm {
+    margin-top: 10px;
+}
+
+.btPlusAcc {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+}
+
+.addSigne {
+    color: #ADD8E6;
+}
+
+.btRemoveAcc {
+    background-color: transparent;
+    border: none;
+    font-size: 25px;
+}
+
+.removeSign {
+    color: #B22222;
+}
+
+#divFood {
+    margin-top: 20px;
+}
+
+#titleQuestion {
+    margin-bottom: 50px;
+}
+
+.foodIcons {
+    height: 64px;
+    width: 64px;
+    margin-bottom: 10px;
+    opacity: .5;
+}
+
+.icon:not(:last-child) {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/* 
+.icon:first-child {
+    margin-left: 0px;
+}
+
+.icon:last-child {
+    margin-right: 0px;
+} */
+
+.brightness img:hover {
+    opacity: 1;
+    width: 85px;
+    height: 85px;
+}
+
+.brightOnSelect img {
+    height: 85px;
+    width: 85px;
+    opacity: 1;
+}
+
+.brightOnSelect p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.CancelOrder img {
+    height: 64px;
+    width: 64px;
+}
+
+.CancelOrder p {
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+#btOrder {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    font-weight: bold;
+}
+
+
+.divResume {
+    margin: 25px;
+    display: none;
+}
+
+.rowError {
+    display: none;
+}
+
+#errMeals {
+    margin-bottom: 5px;
+}
+
+#mapid {
+    height: 250px;
+}
+
+.quantity {
+    margin-bottom: 10px;
+    
+}
+
+#errMealsQuantity {
+    margin-bottom: 5px;
+}
+

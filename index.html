@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-theme.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+   integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+   crossorigin=""/>
+
+    <link rel="icon" href="./images/logoBrowserTab.png" />
+
+
+    <title>Miam's - Accueil</title>
+
+    <link href="./css/carousel.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark navbarCl">
+            <img src="./images/logoWhite.png" class="logoNavBar" alt="">
+            <button id="navbarToggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./book.html">Réservez votre table</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
+            <div id="foodPhotos" class="carousel-inner">
+                <div class="carousel-item">
+                    <img class="first-slide" src="./images/Carousel Images/510-min.jpeg" alt="First slide">
+                    <div class="container">
+                        <div class="carousel-caption text-center carCaption">
+                            <h1>- Nourriture saine et savoureuse -</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item active">
+                    <img class="second-slide" src="./images/Carousel Images/cropped-IMG_6053.jpg" alt="Second slide">
+                    <div class="container">
+                        <div class="carousel-caption text-center carCaption">
+                            <div class="firstCaption">
+                                <h1>- Bienvenue chez Miam's -</h1>
+                                <h2>Un restaurant de qualité exceptionnelle</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="third-slide" src="./images/Carousel Images/burger2.jpeg" alt="Third slide">
+                    <div class="container">
+                        <div class="carousel-caption text-center carCaption">
+                            <h1>- Goutez à nos succulents Hamburgers -</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="fourth-slide" src="./images/Carousel Images/slide3.jpg" alt="Fourth slide">
+                    <div class="container">
+                        <div class="carousel-caption text-center carCaption">
+                            <h1>- Divers menus vous seront proposés -</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon prevNextIcon" aria-hidden="true"></span>
+                <span class="sr-only">Précédent</span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon prevNextIcon" aria-hidden="true"></span>
+                <span class="sr-only">Suivant</span>
+            </a>
+        </div>
+
+
+
+        <div class="container marketing contMark">
+            <div class="row">
+                <div class="col-lg-4">
+                    <img class="rounded-circle" src="./images/Logo_EPI_Sousse.png" alt="Generic placeholder image"
+                        width="140" height="140">
+                    <h2>Ecole</h2>
+                    <p>Ce site a été réalisé au sein de l'EPI. Une école supérieure créée en 2011 qui propose à
+                        ses étudiants d'excellentes formations
+                        pour leurs assurer une brillante carrière.</p>
+                </div>
+                <div class="col-lg-4">
+                    <img class="rounded-circle" src="./images/moezGit.jpg" alt="Generic placeholder image" width="140"
+                        height="140">
+                    <h2>Créateur du site</h2>
+                    <p>Moez Baccouche, Etudiant en 3ème année Ingénierie Informatique, passionné du développement Web.</p>
+                </div>
+                <div class="col-lg-4">
+                    <img class="rounded-circle" src="./images/log3.png" alt="Generic placeholder image" width="140"
+                        height="140">
+                    <h2>Restaurant</h2>
+                    <p>Miam's est un restaurant créé en 2015. Il se trouve à Hammem Sousse. Il possède une grande
+                        réputation grâce à son excellent service et sa délicieuse nourriture.</p>
+                </div>
+            </div>
+
+
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette">
+                <div class="col-md-7">
+                    <h2 class="featurette-heading">Où nous trouver ?
+                        <p class="lead">Notre restaurant se trouve dans la route de la plage à Hammem-Sousse, un
+                            emplacement idéal, calme et proche de la mer si vous aurez envie de faire une petite balade
+                            sur la plage.</p>
+                </div>
+                <div class="col-sm-5" id="mapid">
+                    <!-- <img class="imgAvis" id="imgMap" src="./images/map.png" alt="Emplacement sur carte" hidden>  -->
+                </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette">
+                <div class="col-md-7 order-md-2">
+                    <h2 class="featurette-heading">Votre satisfaction est notre objectif principal</h2>
+                    <p class="lead">Le client est roi. Nos services proposés doivent parfaitement combler vos désirs
+                        attendus.</p>
+                </div>
+                <div class="col-md-5 order-md-1">
+                    <img class="imgAvis" src="./images/avis.png" alt="Avis">
+                </div>
+            </div>
+
+
+            <hr class="featurette-divider">
+
+
+        </div>
+
+
+        <footer class="container">
+            <div class="row">
+                <div class="col-sm-2">
+                    <span><i class="fa fa-phone"></i> (+216) 99 88 77 66</span>
+                </div>
+                <div class="col-sm-6">
+                    <span><i class="fa fa-map-marker"></i> Route de la plage, Hammem-Sousse, 4000</span>
+                </div>
+                <div class="col-sm-3">
+                    <p class="float-right"><a href="#">Haut de la page <i class="fa fa-arrow-up"></i></a></p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="./js/jquery.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+   integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+   crossorigin=""></script>
+    <script src="./js/util.js"></script>
+    
+    <script src="./js/bootstrap-confirmation.min.js"></script>
+
+</body>
+
+</html>
